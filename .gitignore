@@ -1,0 +1,5 @@
+/target
+/.idea/
+tailwind.css
+Cargo.lock
+/dist/

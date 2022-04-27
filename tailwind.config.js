@@ -1,9 +1,7 @@
 module.exports = {
     content: [
-        "./src/**/*.rs",
+        "./src/**/*.{html,css,rs}",
         "./index.html",
-        "./src/**/*.html",
-        "./src/**/*.css",
     ],
     theme: {},
     variants: {},

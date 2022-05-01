@@ -8,10 +8,16 @@ pub enum InputToggleMsg {
 pub struct InputToggleProps {
     #[prop_or(true)]
     toggled: bool,
+    #[prop_or("input-toggle".to_string())]
+    id: String,
+    #[prop_or("input-toggle".to_string())]
+    name: String,
 }
 
 pub struct InputToggle {
     toggled: bool,
+    id: String,
+    name: String,
 }
 
 impl Component for InputToggle {
@@ -21,6 +27,8 @@ impl Component for InputToggle {
     fn create(ctx: &Context<Self>) -> Self {
         Self {
             toggled: ctx.props().toggled,
+            id: ctx.props().id.clone(),
+            name: ctx.props().name.clone(),
         }
     }
 
@@ -28,33 +36,29 @@ impl Component for InputToggle {
         match msg {
             InputToggleMsg::InputToggled => {
                 self.toggled = !self.toggled;
-                // the value has changed so we need to
-                // re-render for it to appear on the page
                 true
             }
         }
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        // TODO: finish translating this vue component
         let link = ctx.link();
-
-        let onchange = link.callback(|_| InputToggleMsg::InputToggled);
+        let onclick = link.callback(|_| InputToggleMsg::InputToggled);
         html! {
             <div
                 class="relative inline-block w-10 h-auto mr-2 align-middle select-none transition duration-800 ease-in"
+                {onclick}
             >
                 <input
-                    id="darkModeToggle"
                     type="checkbox"
-                    // :checked="toggledOn"
-                    // name="darkModeToggle"
-                    class="toggle-checkbox focus:outline-none dark:border-purple-400"
-                    {onchange}
+                    class="input-toggle focus:outline-none dark:border-purple-400"
+                    id={self.id.clone()}
+                    name={self.name.clone()}   
+                    checked={self.toggled}
                 />
                 <label
-                    for="darkModeToggle"
-                    class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-400 cursor-pointer"
+                    class="input-toggle-label block overflow-hidden h-5 rounded-full bg-gray-400 cursor-pointer"
+                    for={self.id.clone()}
                 />
             </div>
         }

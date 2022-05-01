@@ -1,5 +1,5 @@
 /target
 /.idea/
-static/tailwind.css
+static/css/tailwind.css
 Cargo.lock
 /dist/

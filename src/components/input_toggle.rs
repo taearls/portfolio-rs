@@ -47,7 +47,6 @@ impl Component for InputToggle {
         html! {
             <div
                 class="relative inline-block w-10 h-auto mr-2 align-middle select-none transition duration-800 ease-in"
-                {onclick}
             >
                 <input
                     type="checkbox"
@@ -55,6 +54,7 @@ impl Component for InputToggle {
                     id={self.id.clone()}
                     name={self.name.clone()}
                     checked={self.toggled}
+                    {onclick}
                 />
                 <label
                     class="input-toggle-label block overflow-hidden h-5 rounded-full bg-gray-400 cursor-pointer"

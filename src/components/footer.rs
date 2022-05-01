@@ -1,27 +1,31 @@
-use yew::{html, Component, Context, Html, Properties};
+use chrono::{Datelike, Utc};
+use yew::{html, Component, Context, Html};
 
-#[derive(Properties, PartialEq, Clone)]
-pub struct FooterProps {
-    pub year: i32,
+pub struct Footer {
+    year: i32,
 }
 
-pub struct Footer;
+fn get_current_year() -> i32 {
+    Utc::now().year()
+}
 
 impl Component for Footer {
-    type Properties = FooterProps;
+    type Properties = ();
     type Message = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self
+        Self {
+            year: get_current_year(),
+        }
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <footer>
                 <p
                     class="text-center text-soft-black dark:text-white text-xs tracking-wide font-normal"
                 >
-                    {'\u{00A9}'}{'\u{00a0}'}{ctx.props().year}
+                    {'\u{00A9}'}{'\u{00a0}'}{self.year}
                 </p>
             </footer>
         }

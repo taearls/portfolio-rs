@@ -1,9 +1,10 @@
 [package]
-name = "tailwindcss-yew-template"
+name = "portfolio"
 version = "0.1.0"
+authors = ["Tyler Earls <tyler.a.earls@gmail.com>"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+description = "A website demonstrating the programming portfolio of the author, Tyler Earls. Built lovingly with Rust."
 
 [dependencies]
 yew = "0.19.3"
@@ -18,3 +19,8 @@ serde_json = "1.0.79"
 [dependencies.chrono]
 version = "0.4.19"
 features = ["wasmbind", "js-sys"]
+
+[dev-dependencies.cargo-husky]
+version = "1.5.0"
+default-features = false
+features = ["precommit-hook", "run-cargo-test"]

@@ -53,7 +53,7 @@ impl Component for InputToggle {
                     type="checkbox"
                     class="input-toggle focus:outline-none dark:border-purple-400"
                     id={self.id.clone()}
-                    name={self.name.clone()}   
+                    name={self.name.clone()}
                     checked={self.toggled}
                 />
                 <label

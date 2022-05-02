@@ -14,3 +14,6 @@ pub use body::Body;
 
 mod input_toggle;
 pub use input_toggle::InputToggle;
+
+pub mod util;
+pub use util::InlineAnchor;

@@ -25,7 +25,7 @@ impl Component for Footer {
             <footer>
                 <SocialMediaIcons />
                 <p
-                    class="text-center text-soft-black dark:text-white text-xs tracking-wide font-normal"
+                    class="text-center my-2 text-soft-black dark:text-white text-xs tracking-wide font-normal"
                 >
                     {format!("\u{00A9} 1993-{} \u{2022} Tyler Earls", self.year)}
                 </p>

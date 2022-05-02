@@ -6,7 +6,7 @@ pub enum InputToggleMsg {
 
 #[derive(Properties, PartialEq, Clone)]
 pub struct InputToggleProps {
-    #[prop_or(true)]
+    #[prop_or_default]
     toggled: bool,
     #[prop_or("input-toggle".to_string())]
     id: String,

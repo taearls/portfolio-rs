@@ -1,6 +1,7 @@
 use chrono::{Datelike, Utc};
 use yew::{html, Component, Context, Html};
 
+use super::social_media_icons::SocialMediaIcons;
 pub struct Footer {
     year: i32,
 }
@@ -22,10 +23,11 @@ impl Component for Footer {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <footer>
+                <SocialMediaIcons />
                 <p
                     class="text-center text-soft-black dark:text-white text-xs tracking-wide font-normal"
                 >
-                    {'\u{00A9}'}{'\u{00a0}'}{self.year}
+                    {format!("\u{00A9} 1993-{} \u{2022} Tyler Earls", self.year)}
                 </p>
             </footer>
         }

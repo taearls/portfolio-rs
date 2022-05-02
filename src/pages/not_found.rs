@@ -12,7 +12,11 @@ impl Component for NotFound {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <h1>{"Here's the 404 page!!"}</h1>
+            <p
+                class="text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal"
+            >
+                {"Here's the 404 page!!"}
+            </p>
         }
     }
 }

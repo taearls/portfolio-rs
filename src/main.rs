@@ -4,7 +4,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 mod components;
-use components::{Body, Footer};
+use components::{Body, Footer, Header};
 
 mod pages;
 use pages::{Contact, Home, NotFound, Web};
@@ -27,7 +27,7 @@ fn switch(routes: &Route) -> Html {
         Route::Home => html! { <Home /> },
         Route::Web => html! { <Web /> },
         Route::Contact => html! { <Contact /> },
-        Route::NotFound => html! { <NotFound />},
+        Route::NotFound => html! { <NotFound /> },
     }
 }
 
@@ -36,6 +36,7 @@ fn app() -> Html {
     html! {
         <BrowserRouter>
             <Body>
+                <Header />
                 <Switch<Route> render={Switch::render(switch)} />
                 <Footer />
             </Body>

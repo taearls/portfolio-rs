@@ -1,8 +1,10 @@
 use yew::{html, Component, Context, Html};
 
-pub struct Home;
+use super::Navigation;
 
-impl Component for Home {
+pub struct Header;
+
+impl Component for Header {
     type Properties = ();
     type Message = ();
 
@@ -12,11 +14,9 @@ impl Component for Home {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <p
-                class="text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal"
-            >
-                {"Here's the home page!!"}
-            </p>
+            <div>
+                <Navigation />
+            </div>
         }
     }
 }

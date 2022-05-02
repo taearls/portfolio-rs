@@ -7,7 +7,7 @@ mod components;
 use components::{Body, Footer};
 
 mod pages;
-use pages::{Home, Web, Contact, NotFound};
+use pages::{Contact, Home, NotFound, Web};
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
@@ -27,7 +27,7 @@ fn switch(routes: &Route) -> Html {
         Route::Home => html! { <Home /> },
         Route::Web => html! { <Web /> },
         Route::Contact => html! { <Contact /> },
-        Route::NotFound => html! { <NotFound />}
+        Route::NotFound => html! { <NotFound />},
     }
 }
 

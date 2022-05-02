@@ -17,3 +17,9 @@ pub use input_toggle::InputToggle;
 
 pub mod util;
 pub use util::InlineAnchor;
+
+pub mod web_project;
+pub use web_project::{WebProject, WebProjectAnalytics, WebProjectProps};
+
+mod cloudinary_image;
+pub use cloudinary_image::CloudinaryImage;

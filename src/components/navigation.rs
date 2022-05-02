@@ -53,20 +53,19 @@ impl Component for Navigation {
                 <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
                     {
                         links.into_iter().enumerate().map(|(index, link)| {
+                            let classes = if link.is_external {
+                                "pl-4 pr-10 m-0"
+                            } else {
+                                "px-4 m-0"
+                            };
                             html! {
                                 <li
                                     class="flex justify-center sm:inline-block mx-auto py-2 text-center w-1/3 border border-gray-400 dark:border-gray-500 border-t-0 border-l-0 border-r-0 border-b-1 sm:border-none sm:mx-0 w-auto"
                                     key={index}
                                 >
-                                    if link.is_external {
-                                        <InlineAnchor aria_label={link.aria_label} href={link.href} is_external={link.is_external} classes="pl-4 pr-10 m-0">
-                                            {link.display_text}
-                                        </InlineAnchor>
-                                    } else {
-                                        <InlineAnchor aria_label={link.aria_label} href={link.href} is_external={link.is_external} classes="px-4 m-0">
-                                            {link.display_text}
-                                        </InlineAnchor>
-                                    }
+                                    <InlineAnchor aria_label={link.aria_label} href={link.href} is_external={link.is_external} {classes}>
+                                        {link.display_text}
+                                    </InlineAnchor>
                                 </li>
                             }
                         }).collect::<Html>()

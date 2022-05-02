@@ -1,6 +1,6 @@
-use super::super::components::util::InlineAnchor;
 use yew::{html, Component, Context, Html};
 
+use super::super::components::util::InlineAnchor;
 pub struct Home;
 
 impl Component for Home {

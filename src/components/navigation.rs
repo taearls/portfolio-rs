@@ -1,4 +1,4 @@
-use yew::{html, Component, Context, Html, Properties};
+use yew::{classes, html, function_component, Component, Context, Html, Properties};
 
 use super::util::InlineAnchor;
 
@@ -11,6 +11,7 @@ struct NavigationLink {
     href: String,
     #[prop_or_default]
     is_external: bool,
+    is_last: bool,
 }
 
 impl Component for Navigation {
@@ -28,50 +29,85 @@ impl Component for Navigation {
                 display_text: "Home".to_string(),
                 href: "/".to_string(),
                 is_external: false,
+                is_last: false,
             },
             NavigationLink {
                 aria_label: "Visit Web Projects Page".to_string(),
                 display_text: "Web".to_string(),
                 href: "/web-projects".to_string(),
                 is_external: false,
+                is_last: false,
             },
             NavigationLink {
                 aria_label: "Visit Contact Page".to_string(),
                 display_text: "Contact".to_string(),
                 href: "/contact".to_string(),
                 is_external: false,
+                is_last: false,
             },
             NavigationLink {
                 aria_label: "Listen to Tyler's music on Bandcamp".to_string(),
                 display_text: "Music".to_string(),
                 href: "https://cuckooandthebirds.bandcamp.com".to_string(),
                 is_external: true,
+                is_last: true,
             },
         ];
         html! {
-            <div>
-                <ul class="flex flex-col h-auto justify-center sm:flex-row sm:justify-end">
-                    {
-                        links.into_iter().enumerate().map(|(index, link)| {
-                            let classes = if link.is_external {
-                                "pl-4 pr-10 m-0"
-                            } else {
-                                "px-4 m-0"
-                            };
-                            html! {
-                                <li
-                                    class="flex justify-center sm:inline-block mx-auto py-2 text-center w-1/3 border border-gray-400 dark:border-gray-500 border-t-0 border-l-0 border-r-0 border-b-1 sm:border-none sm:mx-0 w-auto"
-                                    key={index}
-                                >
-                                    <InlineAnchor aria_label={link.aria_label} href={link.href} is_external={link.is_external} {classes}>
-                                        {link.display_text}
-                                    </InlineAnchor>
-                                </li>
-                            }
-                        }).collect::<Html>()
-                    }
-                </ul>
+            <div class="w-screen h-fit mb-4">
+                <nav 
+                    class={"fixed flex flex-col sm:flex-row items-center justify-evenly sm:justify-center w-screen top-0 font-default font-mono dark:text-white text-black border border-b border-t-0 border-l-0 border-r-0 mb-4 sm:h-16 h-48"}
+                >
+                    <ul class="flex flex-col h-auto sm:h-16 items-center justify-center sm:flex-row w-40 sm:w-full">
+                        {
+                            links.into_iter().enumerate().map(|(index, link)| {
+                                html! {
+                                    <NavigationLinkListItem
+                                        is_last={link.is_last}
+                                        key={index}
+                                        aria_label={link.aria_label} 
+                                        is_external={link.is_external} 
+                                        href={link.href}
+                                        display_text={link.display_text}
+                                    /> 
+                                }
+                            }).collect::<Html>()
+                        }
+                    </ul>
+                </nav>
+                <div
+                    class={"w-screen top-0 bg-none sm:h-16 h-48"}
+                >
+                </div>
             </div>
         }
+    }
+}
+
+#[function_component(NavigationLinkListItem)] 
+fn navigation_link_list_item(link: &NavigationLink) -> Html {
+    let padding = if link.is_external {
+        "pl-4 pr-10"
+    } else {
+        "px-4"
+    };
+    let border = if link.is_last {
+        "border-none"
+    } else {
+        "border border-gray-400 dark:border-gray-500 border-t-0 border-l-0 border-r-0 border-b-1 sm:border-none"
+    };
+    html! {
+        <li
+            class={classes!("flex justify-center sm:inline-block mx-auto py-2 sm:py-0 w-full sm:mx-0 sm:w-auto sm:h-fit".to_string(), border)}
+        >
+            <InlineAnchor 
+                classes={format!("m-0 {padding}")}
+                aria_label={link.aria_label.clone()}
+                href={link.href.clone()}
+                is_external={link.is_external}
+            >
+                {link.display_text.clone()}
+            </InlineAnchor>
+        </li>
     }
 }

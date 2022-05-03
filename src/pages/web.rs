@@ -27,9 +27,8 @@ impl Component for Web {
                 cursor_style: "pointer".to_string(),
                 descriptions: vec![
                   "A website I made for my band, Cuckoo and the Birds, where you can find all our info, social media links, and press.".to_string(),
-                  "If you're interested to listen, please consider supporting our music by streaming our EP, Twin Stars, on Spotify".to_string(),
+                  "If you're interested to listen, please consider supporting our music by streaming our EP, Twin Stars, on Spotify.".to_string(),
                   "Built mobile-first with Nuxt, Tailwind, and a (mostly) healthy dose of rock 'n' roll 🤘".to_string(),
-                  "Once we're able to play shows again, I'll be posting those updates on that site.".to_string(),
                 ],
                 emoji: "🎵".to_string(),
                 href: "https://www.cuckooandthebirds.com".to_string(),

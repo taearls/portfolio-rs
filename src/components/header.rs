@@ -14,7 +14,7 @@ impl Component for Header {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <header class="my-4">
+            <header class="m-0 w-full">
                 <Navigation />
             </header>
         }

@@ -41,13 +41,13 @@ impl Component for WebProject {
         html! {
             <div class="mx-auto mt-12">
                 <h2
-                    class="text-center font-bold text-2xl mb-8 text-purple-700 dark:text-purple-400"
+                    class="text-center font-bold text-3xl mb-8 text-purple-700 dark:text-purple-400"
                 >
                     { ctx.props().name.clone() }
                 </h2>
                 <div class="flow-root mb-8">
                     <div class="mx-auto text-center w-11/12 mb-2 sm:mb-0 sm:w-1/2 sm:float-left sm:clearfix sm:mr-4">
-                        <div>
+                        <div class="flex justify-center">
                             <a
                                 class="block rounded-sm focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark"
                                 // :rel="project.analytics ? 'noopener' : 'noreferrer'"

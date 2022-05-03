@@ -36,7 +36,6 @@ impl Component for CloudinaryImage {
             <img
                 {src}
                 alt={ctx.props().alt.clone()}
-
             />
         }
     }

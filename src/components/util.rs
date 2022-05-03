@@ -27,7 +27,7 @@ pub fn inline_anchor(props: &InlineAnchorProps) -> Html {
 fn internal_link(props: &InlineAnchorProps) -> Html {
     html! {
         <a
-            class={classes!("inline-block text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), props.classes.clone())}
+            class={classes!("inline-block text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 hover:text-cyan-400 dark:hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), props.classes.clone())}
             aria-label={props.aria_label.clone()}
             href={props.href.clone()}
         >
@@ -67,7 +67,7 @@ fn external_link_icon() -> Html {
             x="0px"
             y="0px"
             viewBox="0 0 100 100"
-            style="margin-bottom: 0.1rem;"
+            style="margin-top: 0.1rem;"
             // xml:space="preserve"
             role="presentation"
             aria-labelledby="externalLinkIcon"

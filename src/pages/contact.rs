@@ -22,7 +22,7 @@ impl Component for Contact {
 
     fn create(_ctx: &Context<Self>) -> Self {
         Self {
-            form_data: ContactFormData::default()
+            form_data: ContactFormData::default(),
         }
     }
 
@@ -37,7 +37,6 @@ impl Component for Contact {
                     println!("subject is empty!");
                 }
                 println!("message is: {}", self.form_data.message);
-
 
                 self.form_data = ContactFormData::default();
                 false

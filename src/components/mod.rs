@@ -1,11 +1,11 @@
-mod header;
-pub use header::Header;
+mod layout;
+pub use layout::{headings::*, Footer, Header};
 
 mod navigation;
 use navigation::Navigation;
 
-mod footer;
-pub use footer::Footer;
+// mod footer;
+// pub use footer::Footer;
 
 mod social_media_icons;
 

@@ -1,7 +1,8 @@
 use yew::{html, Component, Context, Html};
 
-use super::super::components::{
-    util::InlineAnchor, WebProject, WebProjectAnalytics, WebProjectProps,
+use crate::components::{
+    web_project::{WebProject, WebProjectAnalytics, WebProjectProps},
+    HeadingOne, InlineAnchor,
 };
 pub struct Web;
 
@@ -14,6 +15,7 @@ impl Component for Web {
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
+        // TODO: find a cleaner way to initialize this data
         let web_projects: Vec<WebProjectProps> = vec![
             WebProjectProps {
                 alt: "Image of Cuckoo and the Birds Website".to_string(),
@@ -76,9 +78,9 @@ impl Component for Web {
         ];
         html! {
             <section class="px-4 mx-auto max-w-none w-4/5 leading-8">
-                <h1 class="text-center mb-4 text-purple-700 dark:text-purple-400 font-extrabold text-4xl leading-tight">
+                <HeadingOne>
                     {"Web Projects"}
-                </h1>
+                </HeadingOne>
                 <p class="text-soft-black dark:text-white text-lg md:text-xl px-2 mt-4 mb-10 leading-7">
                     {"Here's a sample of some of my coding work.
                     In addition to this website, which has been rebuilt with Rust and Yew, 

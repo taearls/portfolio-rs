@@ -1,7 +1,9 @@
-use super::CloudinaryImage;
+use serde::{Deserialize, Serialize};
 use yew::{html, Component, Context, Html, Properties};
 
-#[derive(PartialEq)]
+use crate::components::CloudinaryImage;
+
+#[derive(Serialize, Deserialize, PartialEq)]
 pub struct WebProjectAnalytics {
     pub campaign: String,
     pub medium: String,
@@ -56,7 +58,7 @@ impl Component for WebProject {
                                 // :href="project.analytics !== null ? getAnalyticsLink(project.href, project.analytics) : project.href"
                                 style={format!("cursor: {}", ctx.props().cursor_style)}
                             >
-                                <CloudinaryImage alt={ctx.props().alt.clone()} public_id={ctx.props().cloudinary_id.clone()} transformations={Some(vec!["q_auto".to_string(), "w_400".to_string()])} extension={ctx.props().image_extension.clone()} />
+                                <CloudinaryImage alt={ctx.props().alt.clone()} public_id={ctx.props().cloudinary_id.clone()} transformations={vec!["q_auto".to_string(), "w_400".to_string()]} extension={ctx.props().image_extension.clone()} />
                             </a>
                         </div>
                         <a

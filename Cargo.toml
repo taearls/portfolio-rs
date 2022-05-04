@@ -9,17 +9,29 @@ description = "A website demonstrating the programming portfolio of the author, 
 [dependencies]
 yew = "0.19.3"
 yew-router = "0.16"
+wasm-bindgen = "0.2.80"
+wasm-bindgen-futures = "0.4.30"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_json = "1.0.80"
+
+# rust logging
+log = "0.4.16"
+
+# web logging
+# Defaults to web-sys implementation (same as yew)
+weblog = "0.3.0"
+
+# wasm logging
 reqwest-wasm = "0.11.0"
 wasm-logger = "0.2.0"
-log = "0.4.16"
-wasm-bindgen-futures = "0.4.30"
-serde = { version = "1.0.48", features = ["derive"] }
-serde_json = "1.0.79"
 
 # https://github.com/chronotope/chrono/issues/382
 [dependencies.chrono]
 version = "0.4.19"
 features = ["wasmbind", "js-sys"]
+
+[dev-dependencies]
+
 
 [dev-dependencies.cargo-husky]
 version = "1.5.0"

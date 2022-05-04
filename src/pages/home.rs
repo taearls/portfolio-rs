@@ -1,6 +1,6 @@
 use yew::{html, Component, Context, Html};
 
-use super::super::components::util::InlineAnchor;
+use crate::components::{HeadingAlignment, HeadingOne, InlineAnchor};
 pub struct Home;
 
 impl Component for Home {
@@ -14,16 +14,16 @@ impl Component for Home {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <section class="px-4 mx-auto max-w-none w-4/5 leading-8">
-                <h1
-                    class="text-left mb-4 text-purple-700 dark:text-purple-400 font-extrabold text-4xl"
-                    style="line-height: 1.1;"
+                <HeadingOne
+                    align={HeadingAlignment::Left}
+                    style={"line-height: 1.1;".to_string()}
                 >
                     {"Hi there!"}
                     <br />
                     {"My name is Tyler Earls."}
                     <br />
                     {"I am a software engineer and musician."}
-                </h1>
+                </HeadingOne>
                 <p
                     class="text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal"
                 >

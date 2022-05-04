@@ -1,6 +1,6 @@
 use yew::{classes, function_component, html, Component, Context, Html, Properties};
 
-use super::util::InlineAnchor;
+use crate::components::InlineAnchor;
 
 pub struct Navigation;
 

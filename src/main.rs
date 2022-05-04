@@ -1,5 +1,3 @@
-extern crate reqwest_wasm;
-
 use yew::prelude::*;
 use yew_router::prelude::*;
 

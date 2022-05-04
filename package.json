@@ -5,13 +5,12 @@
   "description": "A website demonstrating the programming portfolio of the author, Tyler Earls. Built lovingly with Rust.",
   "license": "MIT",
   "scripts": {
-    "setup": "rustup target add wasm32-unknown-unknown && cargo install trunk || true",
-    "setup:prod": "rustup toolchain install stable && npm run setup",
+    "setup": "rustup toolchain install stable && rustup target add wasm32-unknown-unknown && cargo install trunk || true",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:serve\"",
-    "dev:css": "tailwindcss -c tailwind.config.js -o ./static/css/tailwind.css --watch",
+    "dev:css": "tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --watch",
     "dev:serve": "trunk serve",
     "prod": "npm run prod:css && trunk build --release",
-    "prod:css": "tailwindcss -c tailwind.config.js -o ./static/css/tailwind.css --minify",
+    "prod:css": "tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --minify",
     "prod:serve": "trunk serve --release"
   },
   "dependencies": {

@@ -1,10 +1,13 @@
+use serde::{Deserialize, Serialize};
 use yew::{html, Component, Context, FocusEvent, Html};
+
+use crate::components::HeadingOne;
 
 pub struct Contact {
     form_data: ContactFormData,
 }
 
-#[derive(Default)]
+#[derive(Serialize, Deserialize, Default, Debug)]
 pub struct ContactFormData {
     name: String,
     email: String,
@@ -52,9 +55,9 @@ impl Component for Contact {
         });
         html! {
             <section class="px-4 mx-auto max-w-none w-4/5 leading-8">
-                <h1 class="text-center mb-4 text-purple-700 dark:text-purple-400 font-extrabold text-4xl leading-tight">
+                <HeadingOne>
                     {"Contact Tyler Earls"}
-                </h1>
+                </HeadingOne>
                 <p class="w-full max-w-lg mx-auto text-justify text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal">
                     {"If you're interested in hiring me for coding work, my music, or just want to say hello—I'd love to hear from you. I'm a voracious learner, and nothing is too nerdy or niche for my taste."}
                 </p>

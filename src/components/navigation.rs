@@ -1,4 +1,4 @@
-use yew::{classes, html, function_component, Component, Context, Html, Properties};
+use yew::{classes, function_component, html, Component, Context, Html, Properties};
 
 use super::util::InlineAnchor;
 
@@ -55,7 +55,7 @@ impl Component for Navigation {
         ];
         html! {
             <div class="w-screen h-fit mb-4">
-                <nav 
+                <nav
                     class={"fixed flex flex-col sm:flex-row items-center justify-evenly sm:justify-center w-screen top-0 font-default font-mono dark:text-white text-black border border-b border-t-0 border-l-0 border-r-0 mb-4 sm:h-16 h-48"}
                 >
                     <ul class="flex flex-col h-auto sm:h-16 items-center justify-center sm:flex-row w-40 sm:w-full">
@@ -65,11 +65,11 @@ impl Component for Navigation {
                                     <NavigationLinkListItem
                                         is_last={link.is_last}
                                         key={index}
-                                        aria_label={link.aria_label} 
-                                        is_external={link.is_external} 
+                                        aria_label={link.aria_label}
+                                        is_external={link.is_external}
                                         href={link.href}
                                         display_text={link.display_text}
-                                    /> 
+                                    />
                                 }
                             }).collect::<Html>()
                         }
@@ -84,7 +84,7 @@ impl Component for Navigation {
     }
 }
 
-#[function_component(NavigationLinkListItem)] 
+#[function_component(NavigationLinkListItem)]
 fn navigation_link_list_item(link: &NavigationLink) -> Html {
     let padding = if link.is_external {
         "pl-4 pr-10"
@@ -100,7 +100,7 @@ fn navigation_link_list_item(link: &NavigationLink) -> Html {
         <li
             class={classes!("flex justify-center sm:inline-block mx-auto py-2 sm:py-0 w-full sm:mx-0 sm:w-auto sm:h-fit".to_string(), border)}
         >
-            <InlineAnchor 
+            <InlineAnchor
                 classes={format!("m-0 {padding}")}
                 aria_label={link.aria_label.clone()}
                 href={link.href.clone()}

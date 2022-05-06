@@ -46,7 +46,7 @@ pub fn heading_one(props: &HeadingOneProps) -> Html {
             class={classes!(class.clone(), format!("{align}"), "mb-4 text-purple-700 dark:text-purple-400 font-extrabold text-4xl".to_string())}
             style={style.clone()}
         >
-            {children.clone()}
+            {for children.iter()}
         </h1>
     }
 }

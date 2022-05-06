@@ -6,3 +6,6 @@ pub use footer::Footer;
 
 pub mod headings;
 pub use headings::*;
+
+mod page;
+pub use page::Page;

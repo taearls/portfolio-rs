@@ -1,6 +1,6 @@
 use yew::{html, Component, Context, Html};
 
-use crate::components::{HeadingAlignment, HeadingOne, InlineAnchor};
+use crate::components::{HeadingAlignment, HeadingOne, InlineAnchor, Page};
 pub struct Home;
 
 impl Component for Home {
@@ -13,7 +13,7 @@ impl Component for Home {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <section class="px-4 mx-auto max-w-none w-4/5 leading-8">
+            <Page>
                 <HeadingOne
                     align={HeadingAlignment::Left}
                     style={"line-height: 1.1;".to_string()}
@@ -56,7 +56,7 @@ impl Component for Home {
                 >
                     {"I'm also a very avid Star Trek fan. During these difficult times, I find comfort in its optimistic view on the potential of humanity and its future."}
                 </p>
-            </section>
+            </Page>
         }
     }
 }

@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use yew::{html, Component, Context, FocusEvent, Html};
 
-use crate::components::HeadingOne;
+use crate::components::{HeadingOne, Page};
 
 pub struct Contact {
     form_data: ContactFormData,
@@ -54,7 +54,7 @@ impl Component for Contact {
             ContactMsg::FormSubmitted
         });
         html! {
-            <section class="px-4 mx-auto max-w-none w-4/5 leading-8">
+            <Page>
                 <HeadingOne>
                     {"Contact Tyler Earls"}
                 </HeadingOne>
@@ -232,7 +232,7 @@ impl Component for Contact {
                         </div>
                     </fieldset>
                 </form>
-            </section>
+            </Page>
         }
     }
 }

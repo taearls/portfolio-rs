@@ -2,7 +2,7 @@ use yew::{html, Component, Context, Html};
 
 use crate::components::{
     web_project::{WebProject, WebProjectAnalytics, WebProjectProps},
-    HeadingOne, InlineAnchor,
+    HeadingOne, InlineAnchor, Page
 };
 pub struct Web;
 
@@ -77,7 +77,7 @@ impl Component for Web {
               },
         ];
         html! {
-            <section class="px-4 mx-auto max-w-none w-4/5 leading-8">
+            <Page>
                 <HeadingOne>
                     {"Web Projects"}
                 </HeadingOne>
@@ -118,7 +118,7 @@ impl Component for Web {
                         }
                     }).collect::<Html>()
                 }
-            </section>
+            </Page>
         }
     }
 }

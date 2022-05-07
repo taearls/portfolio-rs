@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use yew::{html, Component, Context, Html, Properties};
 
-use crate::components::CloudinaryImage;
+use crate::components::{CloudinaryImage, HeadingTwo};
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct WebProjectAnalytics {
@@ -42,11 +42,9 @@ impl Component for WebProject {
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <div class="mx-auto mt-12">
-                <h2
-                    class="text-center font-bold text-3xl mb-8 text-purple-700 dark:text-purple-400"
-                >
+                <HeadingTwo>
                     { ctx.props().name.clone() }
-                </h2>
+                </HeadingTwo>
                 <div class="flow-root mb-8">
                     <div class="mx-auto text-center w-11/12 mb-2 sm:mb-0 sm:w-1/2 sm:float-left sm:clearfix sm:mr-4">
                         <div class="flex justify-center">

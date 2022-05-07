@@ -22,7 +22,7 @@ impl Display for HeadingAlignment {
 }
 
 #[derive(Properties, PartialEq)]
-pub struct HeadingOneProps {
+pub struct HeadingProps {
     #[prop_or_default]
     pub children: Children,
     #[prop_or(HeadingAlignment::Center)]
@@ -34,8 +34,8 @@ pub struct HeadingOneProps {
 }
 
 #[function_component(HeadingOne)]
-pub fn heading_one(props: &HeadingOneProps) -> Html {
-    let HeadingOneProps {
+pub fn heading_one(props: &HeadingProps) -> Html {
+    let HeadingProps {
         children,
         align,
         class,
@@ -48,5 +48,23 @@ pub fn heading_one(props: &HeadingOneProps) -> Html {
         >
             {for children.iter()}
         </h1>
+    }
+}
+
+#[function_component(HeadingTwo)]
+pub fn heading_two(props: &HeadingProps) -> Html {
+    let HeadingProps {
+        children,
+        align,
+        class,
+        style,
+    } = props;
+    html! {
+        <h2
+            class={classes!(class.clone(), format!("{align}"), "font-bold text-3xl mb-8 text-purple-700 dark:text-purple-400".to_string())}
+            style={style.clone()}
+        >
+            {for children.iter()}
+        </h2>
     }
 }

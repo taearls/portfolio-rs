@@ -54,9 +54,9 @@ impl Component for Navigation {
             },
         ];
         html! {
-            <div class="w-screen h-fit mb-4">
+            <div class="w-full h-fit mb-4">
                 <nav
-                    class={"fixed flex flex-col sm:flex-row items-center justify-evenly sm:justify-center w-screen top-0 font-default font-mono dark:text-white text-black border border-b border-t-0 border-l-0 border-r-0 mb-4 sm:h-16 h-48"}
+                    class={"fixed bg-soft-black flex flex-col sm:flex-row items-center justify-evenly sm:justify-center w-full top-0 font-default font-mono dark:text-white text-black border border-b border-t-0 border-l-0 border-r-0 mb-4 sm:h-16 h-48"}
                 >
                     <ul class="flex flex-col h-auto sm:h-16 items-center justify-center sm:flex-row w-40 sm:w-full">
                         {

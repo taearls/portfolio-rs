@@ -36,4 +36,4 @@ features = ["wasmbind", "js-sys"]
 [dev-dependencies.cargo-husky]
 version = "1.5.0"
 default-features = false
-features = ["precommit-hook", "run-cargo-test"]
+features = ["precommit-hook", "run-cargo-fmt", "run-cargo-clippy", "run-cargo-test"]

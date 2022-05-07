@@ -15,7 +15,7 @@ pub fn page(props: &PageProps) -> Html {
     let PageProps {
         children,
         class,
-        style
+        style,
     } = props;
 
     html! {

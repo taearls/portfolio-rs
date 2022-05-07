@@ -2,7 +2,7 @@ use yew::{html, Component, Context, Html};
 
 use crate::components::{
     web_project::{WebProject, WebProjectAnalytics, WebProjectProps},
-    HeadingOne, InlineAnchor, Page
+    HeadingOne, InlineAnchor, Page,
 };
 pub struct Web;
 

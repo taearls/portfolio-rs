@@ -30,10 +30,7 @@ wasm-logger = "0.2.0"
 version = "0.4.19"
 features = ["wasmbind", "js-sys"]
 
-[dev-dependencies]
-
-
 [dev-dependencies.cargo-husky]
 version = "1.5.0"
 default-features = false
-features = ["precommit-hook", "run-cargo-fmt", "run-cargo-clippy", "run-cargo-test"]
+features = ["precommit-hook", "run-cargo-test", "run-cargo-fmt", "run-cargo-clippy"]

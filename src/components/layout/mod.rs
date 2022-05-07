@@ -9,3 +9,6 @@ pub use headings::*;
 
 mod page;
 pub use page::Page;
+
+mod paragraph;
+pub use paragraph::Paragraph;

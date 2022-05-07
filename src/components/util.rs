@@ -14,39 +14,60 @@ pub struct InlineAnchorProps {
 
 #[function_component(InlineAnchor)]
 pub fn inline_anchor(props: &InlineAnchorProps) -> Html {
+    let InlineAnchorProps {
+        aria_label,
+        href,
+        children,
+        classes,
+        is_external,
+    } = props;
     html! {
-        if props.is_external {
-            <ExternalLink children={props.children.clone()} aria_label={props.aria_label.clone()} href={props.href.clone()} classes={props.classes.clone()} />
+        if *is_external {
+            <ExternalLink children={children.clone()} aria_label={aria_label.clone()} href={href.clone()} classes={classes.clone()} />
         } else {
-            <InternalLink children={props.children.clone()} aria_label={props.aria_label.clone()} href={props.href.clone()} classes={props.classes.clone()} />
+            <InternalLink children={children.clone()} aria_label={aria_label.clone()} href={href.clone()} classes={classes.clone()} />
         }
     }
 }
 
 #[function_component(InternalLink)]
 fn internal_link(props: &InlineAnchorProps) -> Html {
+    let InlineAnchorProps {
+        aria_label,
+        href,
+        children,
+        classes,
+        ..
+    } = props;
     html! {
         <a
-            class={classes!("inline-block text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 hover:text-cyan-400 dark:hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), props.classes.clone())}
-            aria-label={props.aria_label.clone()}
-            href={props.href.clone()}
+            class={classes!("inline-block text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 hover:text-cyan-400 dark:hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), classes.clone())}
+            aria-label={aria_label.clone()}
+            href={href.clone()}
         >
-            {for props.children.iter()}
+            {for children.iter()}
         </a>
     }
 }
 
 #[function_component(ExternalLink)]
 fn external_link(props: &InlineAnchorProps) -> Html {
+    let InlineAnchorProps {
+        aria_label,
+        href,
+        children,
+        classes,
+        ..
+    } = props;
     html! {
         <span class="group inline-block">
             <a
-                class={classes!("inline-block pr-6 text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), props.classes.clone())}
-                aria-label={props.aria_label.clone()}
+                class={classes!("inline-block pr-6 text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), classes.clone())}
+                aria-label={aria_label.clone()}
                 target="_blank"
-                href={props.href.clone()}
+                href={href.clone()}
             >
-                <span>{for props.children.iter()}</span>
+                <span>{for children.iter()}</span>
                 <ExternalLinkIcon />
             </a>
         </span>

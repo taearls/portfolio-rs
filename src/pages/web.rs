@@ -2,7 +2,7 @@ use yew::{html, Component, Context, Html};
 
 use crate::components::{
     web_project::{WebProject, WebProjectAnalytics, WebProjectProps},
-    HeadingOne, InlineAnchor, Page,
+    HeadingOne, InlineAnchor, Page, Paragraph,
 };
 pub struct Web;
 
@@ -81,7 +81,7 @@ impl Component for Web {
                 <HeadingOne>
                     {"Web Projects"}
                 </HeadingOne>
-                <p class="text-soft-black dark:text-white text-lg md:text-xl px-2 mt-4 mb-10 leading-7">
+                <Paragraph>
                     {"Here's a sample of some of my coding work.
                     In addition to this website, which has been rebuilt with Rust and Yew, 
                     my work includes the personal and freelance projects listed below. If you're interested to see more, feel free to stalk me on "}
@@ -89,14 +89,14 @@ impl Component for Web {
                         {"Github"}
                     </InlineAnchor>
                     {"."}
-                </p>
-                <p class="text-soft-black dark:text-white text-lg md:text-xl px-2 mt-4 mb-10 leading-7">
+                </Paragraph>
+                <Paragraph>
                     {"Since the Covid-19 pandemic started, I have been particularly interested in Rust. I'm currently working through the Rust track on Exercism, in addition to maintaining this website. I'm also developing a library to leverage music theory concepts generate chords and scales from user input. If you'd like, check out the "}
                     <InlineAnchor href="https://github.com/taearls/audiate" aria_label="Go to the documentation for Audiate">
                         {"documentation"}
                     </InlineAnchor>
                     {" for Audiate to keep up-to-date with my progress."}
-                </p>
+                </Paragraph>
 
                 {
                     web_projects.into_iter().enumerate().map(|(index, web_project)| {

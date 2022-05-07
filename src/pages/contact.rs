@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use yew::{html, Component, Context, FocusEvent, Html};
 
-use crate::components::{HeadingOne, Page};
+use crate::components::{HeadingOne, Page, Paragraph};
 
 pub struct Contact {
     form_data: ContactFormData,
@@ -58,12 +58,12 @@ impl Component for Contact {
                 <HeadingOne>
                     {"Contact Tyler Earls"}
                 </HeadingOne>
-                <p class="w-full max-w-lg mx-auto text-justify text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal">
+                <Paragraph>
                     {"If you're interested in hiring me for coding work, my music, or just want to say hello—I'd love to hear from you. I'm a voracious learner, and nothing is too nerdy or niche for my taste."}
-                </p>
-                <p class="w-full max-w-lg mx-auto text-justify text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal">
+                </Paragraph>
+                <Paragraph>
                     {"The best way to reach me is by completing the form below."}
-                </p>
+                </Paragraph>
                 <form
                     id="contact"
                     class="form-boxshadow mx-auto my-8 bg-gray-200 dark:bg-gray-900 rounded-md w-full max-w-sm"

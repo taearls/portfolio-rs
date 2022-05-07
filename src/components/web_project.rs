@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use yew::{html, Component, Context, Html, Properties};
 
-use crate::components::{CloudinaryImage, HeadingTwo};
+use crate::components::{CloudinaryImage, HeadingTwo, Paragraph};
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct WebProjectAnalytics {
@@ -72,12 +72,12 @@ impl Component for WebProject {
                         {
                             ctx.props().descriptions.clone().into_iter().enumerate().map(|(index, description)| {
                                 html! {
-                                    <p
+                                    <Paragraph
                                         key={index}
-                                        class="my-4 px-2 sm:px-0 text-soft-black dark:text-white text-justify text-lg md:text-xl leading-7"
+                                        class="text-justify"
                                     >
                                         {description}
-                                    </p>
+                                    </Paragraph>
                                 }
                             }).collect::<Html>()
                         }

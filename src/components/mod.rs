@@ -1,5 +1,5 @@
 mod layout;
-pub use layout::{headings::*, Footer, Header, Page};
+pub use layout::{headings::*, Footer, Header, Page, Paragraph};
 
 mod navigation;
 use navigation::Navigation;

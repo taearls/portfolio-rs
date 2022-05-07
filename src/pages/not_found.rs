@@ -1,6 +1,6 @@
 use yew::{html, Component, Context, Html};
 
-use crate::components::Page;
+use crate::components::{Page, Paragraph};
 
 pub struct NotFound;
 
@@ -15,11 +15,9 @@ impl Component for NotFound {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
             <Page>
-                <p
-                    class="text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal"
-                >
+                <Paragraph>
                     {"Here's the 404 page!!"}
-                </p>
+                </Paragraph>
             </Page>
         }
     }

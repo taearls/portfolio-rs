@@ -13,6 +13,9 @@ wasm-bindgen = "0.2.80"
 wasm-bindgen-futures = "0.4.30"
 serde = { version = "1.0.137", features = ["derive"] }
 serde_json = "1.0.80"
+web-sys = "0.3.57"
+regex = "1.5.5"
+lazy_static = "1.4.0"
 
 # rust logging
 log = "0.4.16"

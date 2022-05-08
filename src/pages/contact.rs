@@ -91,6 +91,7 @@ impl Component for Contact {
                 errors.iter().for_each(|error| {
                     console_log!("error: ", error.to_string());
                 });
+
                 // send email
 
                 // maybe I should clear out form data after it's sent
@@ -356,7 +357,7 @@ impl Component for Contact {
                                 <input
                                     type="submit"
                                     value="Send Email"
-                                    disabled={!self.form_data.errors.is_empty()}
+                                    disabled={is_form_disabled(&self.form_data)}
                                     // :disabled="saveDisabled"
                                     class="inline-block my-2 cursor-pointer text-white transition-colors transition-padding ease-in-out duration-200 bg-purple-700 dark:bg-purple-400 rounded-lg pl-2 pr-10 disabled:pr-2 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark"
                                     // :class="{'submit-hover': !saveDisabled && hoveringMessage }"
@@ -376,6 +377,26 @@ impl Component for Contact {
             </Page>
         }
     }
+}
+
+fn is_form_disabled(form_data: &ContactFormData) -> bool {
+    // in order of precedence:
+    // 1. UI error messages present
+    // 2. email address invalid
+    // 3. required fields empty
+    !form_data.errors.is_empty()
+        || validate_email(&form_data.email).is_none()
+        || required_values_empty(form_data)
+}
+
+fn required_values_empty(form_data: &ContactFormData) -> bool {
+    let ContactFormData {
+        name,
+        email,
+        message,
+        ..
+    } = form_data;
+    name.is_empty() || email.is_empty() || message.is_empty()
 }
 
 fn validate_required_field(value: &str) -> Option<&str> {

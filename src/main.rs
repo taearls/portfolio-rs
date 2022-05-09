@@ -7,6 +7,8 @@ use components::{Body, Footer, Header};
 mod pages;
 use pages::{Contact, Home, NotFound, Web};
 
+mod api;
+
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
     #[at("/")]

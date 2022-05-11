@@ -6,6 +6,12 @@ edition = "2021"
 license = "MIT"
 description = "A website demonstrating the programming portfolio of the author, Tyler Earls. Built lovingly with Rust."
 
+[features]
+# to enable "email-service" feature when it works, add it here:
+default = []
+email-service = []
+contact-form-mailto-link = []
+
 [dependencies]
 yew = "0.19.3"
 yew-router = "0.16"

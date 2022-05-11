@@ -26,3 +26,11 @@ pub use error_message::ErrorMessage;
 
 mod success_message;
 pub use success_message::SuccessMessage;
+
+mod mailto_link;
+pub use mailto_link::MailtoLink;
+
+#[cfg(any(feature = "email-service", feature = "contact-form-mailto-link"))]
+mod contact_form;
+#[cfg(any(feature = "email-service", feature = "contact-form-mailto-link"))]
+pub use contact_form::ContactForm;

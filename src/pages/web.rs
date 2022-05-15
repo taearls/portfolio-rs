@@ -1,22 +1,15 @@
-use yew::{html, Component, Context, Html};
+use yew::{function_component, html, Html};
 
 use crate::components::{
     web_project::{WebProject, WebProjectAnalytics, WebProjectProps},
     HeadingOne, InlineAnchor, Page, Paragraph,
 };
-pub struct Web;
 
-impl Component for Web {
-    type Properties = ();
-    type Message = ();
-
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        // TODO: find a cleaner way to initialize this data
-        let web_projects: Vec<WebProjectProps> = vec![
+#[function_component(Web)]
+pub fn web() -> Html {
+    // TODO: find a cleaner way to initialize this data
+    // https://getpantry.cloud/apiv1/pantry/taearls
+    let web_projects: Vec<WebProjectProps> = vec![
             WebProjectProps {
                 alt: "Image of Cuckoo and the Birds Website".to_string(),
                 analytics: Some(WebProjectAnalytics {
@@ -32,7 +25,7 @@ impl Component for Web {
                   "If you're interested to listen, please consider supporting our music by streaming our EP, Twin Stars, on Spotify.".to_string(),
                   "Built mobile-first with Nuxt, Tailwind, and a (mostly) healthy dose of rock 'n' roll 🤘".to_string(),
                 ],
-                emoji: "🎵".to_string(),
+                emoji: Some("🎵".to_string()),
                 href: "https://www.cuckooandthebirds.com".to_string(),
                 name: "Cuckoo and the Birds Website".to_string(),
                 tagline: "Give our music a listen!".to_string(),
@@ -51,7 +44,7 @@ impl Component for Web {
                 ],
                 cursor_style: "pointer".to_string(),
                 href: "https://www.roadrangerusa.com".to_string(),
-                emoji: "⛽".to_string(),
+                emoji: Some("⛽".to_string()),
                 name: "Road Ranger".to_string(),
                 tagline: "Check it out!".to_string(),
                 image_extension: "jpg".to_string(),
@@ -68,7 +61,7 @@ impl Component for Web {
                   "An original space shooting video game inspired by Space Invaders, the 1978 arcade classic. Defeat the clone army and then their mothership to advance to the next level.".to_string(),
                   "If you get a high enough score, you can earn extra lives. Play solo, or take turns with a friend. The galaxy is yours to save from the invading clone army! Created using HTML5, CSS3, JavaScript, and jQuery.".to_string(),
                 ],
-                emoji: "😉".to_string(),
+                emoji: Some("😉".to_string()),
                 href: "https://space-clones.netlify.com".to_string(),
                 name: "Space Clones".to_string(),
                 tagline: "Beat my high score!".to_string(),
@@ -76,49 +69,48 @@ impl Component for Web {
                 is_last: true,
               },
         ];
-        html! {
-            <Page>
-                <HeadingOne>
-                    {"Web Projects"}
-                </HeadingOne>
-                <Paragraph>
-                    {"Here's a sample of some of my coding work.
+    html! {
+        <Page>
+            <HeadingOne>
+                {"Web Projects"}
+            </HeadingOne>
+            <Paragraph>
+                {"Here's a sample of some of my coding work.
                     In addition to this website, which has been rebuilt with Rust and Yew, 
                     my work includes the personal and freelance projects listed below. If you're interested to see more, feel free to stalk me on "}
-                    <InlineAnchor href="https://github.com/taearls" aria_label="Go to Tyler's Github">
-                        {"Github"}
-                    </InlineAnchor>
-                    {"."}
-                </Paragraph>
-                <Paragraph>
-                    {"Since the Covid-19 pandemic started, I have been particularly interested in Rust. I'm currently working through the Rust track on Exercism, in addition to maintaining this website. I'm also developing a library to leverage music theory concepts generate chords and scales from user input. If you'd like, check out the "}
-                    <InlineAnchor href="https://github.com/taearls/audiate" aria_label="Go to the documentation for Audiate">
-                        {"documentation"}
-                    </InlineAnchor>
-                    {" for Audiate to keep up-to-date with my progress."}
-                </Paragraph>
+                <InlineAnchor href="https://github.com/taearls" aria_label="Go to Tyler's Github">
+                    {"Github"}
+                </InlineAnchor>
+                {"."}
+            </Paragraph>
+            <Paragraph>
+                {"Since the Covid-19 pandemic started, I have been particularly interested in Rust. I'm currently working through the Rust track on Exercism, in addition to maintaining this website. I'm also developing a library to leverage music theory concepts generate chords and scales from user input. If you'd like, check out the "}
+                <InlineAnchor href="https://github.com/taearls/audiate" aria_label="Go to the documentation for Audiate">
+                    {"documentation"}
+                </InlineAnchor>
+                {" for Audiate to keep up-to-date with my progress."}
+            </Paragraph>
 
-                {
-                    web_projects.into_iter().enumerate().map(|(index, web_project)| {
-                        html! {
-                            <WebProject
-                                key={index}
-                                analytics={web_project.analytics}
-                                cloudinary_id={web_project.cloudinary_id}
-                                alt={web_project.alt}
-                                cursor_style={web_project.cursor_style}
-                                descriptions={web_project.descriptions}
-                                emoji={web_project.emoji}
-                                href={web_project.href}
-                                image_extension={web_project.image_extension}
-                                name={web_project.name}
-                                tagline={web_project.tagline}
-                                is_last={web_project.is_last}
-                            />
-                        }
-                    }).collect::<Html>()
-                }
-            </Page>
-        }
+            {
+                web_projects.into_iter().enumerate().map(|(index, web_project)| {
+                    html! {
+                        <WebProject
+                            key={index}
+                            analytics={web_project.analytics}
+                            cloudinary_id={web_project.cloudinary_id}
+                            alt={web_project.alt}
+                            cursor_style={web_project.cursor_style}
+                            descriptions={web_project.descriptions}
+                            emoji={web_project.emoji}
+                            href={web_project.href}
+                            image_extension={web_project.image_extension}
+                            name={web_project.name}
+                            tagline={web_project.tagline}
+                            is_last={web_project.is_last}
+                        />
+                    }
+                }).collect::<Html>()
+            }
+        </Page>
     }
 }

@@ -21,7 +21,7 @@ pub fn home() -> Html {
                     <InlineAnchor href="https://cquence.app" aria_label="Go to Cquence">
                         {"Cquence"}
                     </InlineAnchor>
-                {", where I help develop video software that empowers film makers and content creators in their post production workflow."}
+                {", where I help develop collaborative video software that empowers educators, film makers, and content creators in their post production workflow."}
             </Paragraph>
             <Paragraph>
                 {"Aside from this work, I occasionally take on freelance frontend work. I love building clean and accessible UI components that enrich everyone's web experience."}

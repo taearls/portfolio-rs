@@ -86,11 +86,6 @@ impl Component for Navigation {
 
 #[function_component(NavigationLinkListItem)]
 fn navigation_link_list_item(link: &NavigationLink) -> Html {
-    let padding = if link.is_external {
-        "pl-4 pr-10"
-    } else {
-        "px-4"
-    };
     let border = if link.is_last {
         "border-none"
     } else {
@@ -101,7 +96,7 @@ fn navigation_link_list_item(link: &NavigationLink) -> Html {
             class={classes!("flex justify-center sm:inline-block mx-auto py-2 sm:py-0 w-full sm:mx-0 sm:w-auto sm:h-fit".to_string(), border)}
         >
             <InlineAnchor
-                classes={format!("m-0 {padding}")}
+                classes={"m-0 px-4"}
                 aria_label={link.aria_label.clone()}
                 href={link.href.clone()}
                 is_external={link.is_external}

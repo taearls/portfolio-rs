@@ -62,7 +62,7 @@ fn external_link(props: &InlineAnchorProps) -> Html {
     html! {
         <span class="group inline-block">
             <a
-                class={classes!("inline-block pr-6 text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), classes.clone())}
+                class={classes!("inline-block text-lg font-extrabold text-purple-700 rounded-sm dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 sm:items-center sm:justify-center focus:outline-none focus:shadow-outline-light dark:focus:shadow-outline-dark".to_string(), classes.clone())}
                 aria-label={aria_label.clone()}
                 target="_blank"
                 href={href.clone()}
@@ -78,7 +78,7 @@ fn external_link(props: &InlineAnchorProps) -> Html {
 fn external_link_icon() -> Html {
     html! {
         <svg
-            class="stroke-current fill-current mx-0.5 text-purple-700 dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 absolute inline-block"
+            class="stroke-current fill-current mx-0.5 text-purple-700 dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 inline-block"
             height="24px"
             width="24px"
             stroke-width="5"
@@ -88,7 +88,7 @@ fn external_link_icon() -> Html {
             x="0px"
             y="0px"
             viewBox="0 0 100 100"
-            style="margin-top: 0.1rem;"
+            style="transform: translate(0px, -1px);"
             // xml:space="preserve"
             role="presentation"
             aria-labelledby="externalLinkIcon"

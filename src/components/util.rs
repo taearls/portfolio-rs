@@ -88,7 +88,7 @@ fn external_link_icon() -> Html {
             x="0px"
             y="0px"
             viewBox="0 0 100 100"
-            style="transform: translate(0px, -1px);"
+            style="margin-top: -1px;"
             // xml:space="preserve"
             role="presentation"
             aria-labelledby="externalLinkIcon"

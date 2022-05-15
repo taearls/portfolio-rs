@@ -346,8 +346,8 @@ impl Component for ContactForm {
     }
 }
 
-fn is_form_disabled(contact: &Contact) -> bool {
-    let Contact { form_data, errors } = contact;
+fn is_form_disabled(contact: &ContactForm) -> bool {
+    let ContactForm { form_data, errors } = contact;
     // in order of precedence:
     // 1. UI error messages present
     // 2. email address invalid

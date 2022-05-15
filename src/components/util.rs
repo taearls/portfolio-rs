@@ -78,7 +78,7 @@ fn external_link(props: &InlineAnchorProps) -> Html {
 fn external_link_icon() -> Html {
     html! {
         <svg
-            class="stroke-current fill-current mx-0.5 text-purple-700 dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 inline-block"
+            class="stroke-current fill-current text-purple-700 dark:text-purple-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-300 inline-block"
             height="24px"
             width="24px"
             stroke-width="5"
@@ -88,7 +88,7 @@ fn external_link_icon() -> Html {
             x="0px"
             y="0px"
             viewBox="0 0 100 100"
-            style="margin-top: -1px;"
+            style="margin-top: -4px;"
             // xml:space="preserve"
             role="presentation"
             aria-labelledby="externalLinkIcon"

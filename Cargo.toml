@@ -9,8 +9,8 @@ description = "A website showcasing the programming portfolio of its creator, Ty
 [features]
 # to enable a new feature, add it here:
 default = []
-email-service = ["serde_json", "web-sys", "reqwest"]
-contact-form-mailto-link = ["serde_json", "web-sys", "reqwest"]
+email-service = ["web-sys", "reqwest"]
+contact-form-mailto-link = ["web-sys", "reqwest"]
 
 # https://rustwasm.github.io/book/reference/code-size.html#optimizing-builds-for-code-size
 
@@ -24,8 +24,8 @@ lto = true
 inherits = "release"
 opt-level = "z"  # Optimize for size.
 
+# this option will result in longer compile times... probably not best suited for Netlify's free tier limits.
 # https://github.com/johnthagen/min-sized-rust#reduce-parallel-code-generation-units-to-increase-optimization
-# this one will make longer compile times... probably not good to use generally for Netlify limits.
 # codegen-units = 1
 
 [dependencies]
@@ -39,9 +39,9 @@ lazy_static = "1.4.0"
 # https://github.com/chronotope/chrono/issues/382
 chrono = { version = "0.4.19", features = ["wasmbind", "js-sys"] }
 serde = { version = "1.0.137", features = ["derive"] }
+serde_json = "1.0.80"
 
 # contact_form, email-service
-serde_json = { version = "1.0.80", optional = true }
 web-sys = { version = "0.3.57", features = ["Window"], optional = true }
 reqwest = { version = "0.11.10", optional = true }
 

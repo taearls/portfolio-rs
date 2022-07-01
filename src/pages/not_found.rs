@@ -1,22 +1,14 @@
-use yew::{html, Component, Context, Html};
+use yew::{function_component, html};
 
-pub struct NotFound;
+use crate::components::{Page, Paragraph};
 
-impl Component for NotFound {
-    type Properties = ();
-    type Message = ();
-
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <p
-                class="text-soft-black dark:text-white my-4 text-lg md:text-xl leading-normal"
-            >
+#[function_component(NotFound)]
+pub fn not_found() -> Html {
+    html! {
+        <Page>
+            <Paragraph>
                 {"Here's the 404 page!!"}
-            </p>
-        }
+            </Paragraph>
+        </Page>
     }
 }

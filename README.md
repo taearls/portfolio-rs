@@ -1,21 +1,6 @@
-# tailwindcss-yew-template
-Simple layout for using Tailwindcss with Yew.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1a87725e-4809-4747-84ba-36365d64e4a7/deploy-status)](https://app.netlify.com/sites/lucky-daifuku-8ecef4/deploys)
 
-## Installation
-Install tailwindcss and relevant tools. Make sure **node** and **rust** is installed on your system!
+# Portfolio
+The portfolio site for Tyler Earls, built lovingly with Rust.
 
-```Bash
-npm run setup
-```
 
-### Clone repository
-
-**Dev server:**
-```
-npm run dev
-```
-
-**Production:**
-```
-npm run prod
-```

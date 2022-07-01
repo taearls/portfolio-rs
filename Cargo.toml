@@ -4,24 +4,56 @@ version = "0.1.0"
 authors = ["Tyler Earls <tyler.a.earls@gmail.com>"]
 edition = "2021"
 license = "MIT"
-description = "A website demonstrating the programming portfolio of the author, Tyler Earls. Built lovingly with Rust."
+description = "A website showcasing the programming portfolio of its creator, Tyler Earls. Built lovingly with Rust and Yew."
+
+[features]
+# to enable a new feature, add it here:
+default = []
+email-service = ["web-sys", "reqwest"]
+contact-form-mailto-link = ["web-sys", "reqwest"]
+
+# https://rustwasm.github.io/book/reference/code-size.html#optimizing-builds-for-code-size
+
+# optimize for speed by default
+[profile.release] 
+# https://github.com/johnthagen/min-sized-rust#enable-link-time-optimization-lto
+lto = true
+
+# profile specifically to optimize for size at the expense of speed
+[profile.release-size]
+inherits = "release"
+opt-level = "z"  # Optimize for size.
+
+# this option will result in longer compile times... probably not best suited for Netlify's free tier limits.
+# https://github.com/johnthagen/min-sized-rust#reduce-parallel-code-generation-units-to-increase-optimization
+# codegen-units = 1
 
 [dependencies]
 yew = "0.19.3"
 yew-router = "0.16"
-reqwest-wasm = "0.11.0"
-wasm-logger = "0.2.0"
-log = "0.4.16"
+wasm-bindgen = "0.2.80"
 wasm-bindgen-futures = "0.4.30"
-serde = { version = "1.0.48", features = ["derive"] }
-serde_json = "1.0.79"
-
+wasm-logger = "0.2.0" # sets up logging from generated wasm files with stack traces in web console
+regex = "1.5.5"
+lazy_static = "1.4.0"
 # https://github.com/chronotope/chrono/issues/382
-[dependencies.chrono]
-version = "0.4.19"
-features = ["wasmbind", "js-sys"]
+chrono = { version = "0.4.19", features = ["wasmbind", "js-sys"] }
+serde = { version = "1.0.137", features = ["derive"] }
+serde_json = "1.0.80"
+
+# contact_form, email-service
+web-sys = { version = "0.3.57", features = ["Window"], optional = true }
+reqwest = { version = "0.11.10", optional = true }
+
+[dev-dependencies]
+# rust logging
+log = "0.4.16"
+# Defaults to web-sys implementation (same as yew)
+weblog = "0.3.0"
+# wasm logging
+reqwest-wasm = "0.11.0"
 
 [dev-dependencies.cargo-husky]
 version = "1.5.0"
 default-features = false
-features = ["precommit-hook", "run-cargo-test"]
+features = ["precommit-hook", "run-cargo-test", "run-cargo-fmt", "run-cargo-clippy"]

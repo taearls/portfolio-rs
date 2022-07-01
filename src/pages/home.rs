@@ -17,14 +17,19 @@ pub fn home() -> Html {
                 {"I am a software engineer and musician."}
             </HeadingOne>
             <Paragraph>
-                {"Currently, I work at "}
-                    <InlineAnchor href="https://cquence.app" aria_label="Go to Cquence">
-                        {"Cquence"}
-                    </InlineAnchor>
-                {", where I help develop collaborative video software that empowers educators, film makers, and content creators in their post production workflow."}
+                {"Currently, I am looking for a full-time software engineering position. I have years of industry experience with TypeScript, React, Vue, Java, and more."}
             </Paragraph>
             <Paragraph>
-                {"Aside from this work, I occasionally take on freelance frontend work. I love building clean and accessible UI components that enrich everyone's web experience."}
+                {"Since the start of the Covid-19 pandemic, I have been studying Rust, and now I use it regularly both on side projects (including this website!) and on Exercism's "}
+                <InlineAnchor href="https://www.exercism.io" aria_label="Go to Exercism">{"Rust track"}</InlineAnchor>
+                {". Ideally my next role will be at a company that's interested in adopting Rust."}
+            </Paragraph>
+            <Paragraph>
+                {"I'm also developing a Rust crate that leverages music theory to generate valid chords and scales from user input. If you'd like, check out the "}
+                <InlineAnchor href="https://github.com/taearls/audiate" aria_label="Go to the documentation for Audiate">
+                    {"documentation"}
+                </InlineAnchor>
+                {" for Audiate to keep up-to-date with my progress."}
             </Paragraph>
             <Paragraph>
                 {"Outside of tech, I write songs and lead a band called "}

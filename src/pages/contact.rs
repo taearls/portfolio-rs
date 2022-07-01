@@ -23,6 +23,7 @@ pub fn contact() -> Html {
             <Paragraph>
                 {"The best way to reach me is via email at "}
                 <MailtoLink></MailtoLink>
+                {"."}
             </Paragraph>
             // uncomment to re-add contact form
             // <ContactForm></ContactForm>

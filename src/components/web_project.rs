@@ -89,7 +89,7 @@ pub fn web_project(props: &WebProjectProps) -> Html {
                         descriptions.clone().into_iter().enumerate()
                             .map(|(index, description)| {
                                 html! {
-                                    <Paragraph key={index}>
+                                    <Paragraph key={index} class="mt-0">
                                         {description}
                                     </Paragraph>
                                 }

@@ -83,13 +83,13 @@ pub fn web() -> Html {
                 </InlineAnchor>
                 {"."}
             </Paragraph>
-            <Paragraph>
-                {"Since the Covid-19 pandemic started, I have been particularly interested in Rust. I'm currently working through the Rust track on Exercism, in addition to maintaining this website. I'm also developing a library to leverage music theory concepts generate chords and scales from user input. If you'd like, check out the "}
-                <InlineAnchor href="https://github.com/taearls/audiate" aria_label="Go to the documentation for Audiate">
-                    {"documentation"}
-                </InlineAnchor>
-                {" for Audiate to keep up-to-date with my progress."}
-            </Paragraph>
+            // <Paragraph>
+            //     {"Since the Covid-19 pandemic started, I have been particularly interested in Rust. I'm currently working through the Rust track on Exercism, in addition to maintaining this website. I'm also developing a library that leverages music theory to generate valid chords and scales from user input. If you'd like, check out the "}
+            //     <InlineAnchor href="https://github.com/taearls/audiate" aria_label="Go to the documentation for Audiate">
+            //         {"documentation"}
+            //     </InlineAnchor>
+            //     {" for Audiate to keep up-to-date with my progress."}
+            // </Paragraph>
 
             {
                 web_projects.into_iter().enumerate().map(|(index, web_project)| {

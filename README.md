@@ -3,7 +3,7 @@
 # Hire Me!
 I'm currently between full-time positions. I have experience working on frontend applications with React and Vue, and I have backend experience in Node and Java. I have been learning Rust (which this website is written in) independently for 2 years as well.
 
-If you're hiring, or if you simply want to say hello, please feel free to email me at [tyler.a.earls@gmail.com](mailto:tyler.a.earls@gmail.com).
+I have a passion for learning new things and I'm always looking to learn more. If you're hiring, or if you simply want to say hello, please feel free to email me at [tyler.a.earls@gmail.com](mailto:tyler.a.earls@gmail.com).
 
 # Portfolio
 This repository is the source code for my tech portfolio, built lovingly with [Yew](https://www.yew.rs), a web framework written in Rust. I also use [TailwindCSS](https://tailwindcss.com) in my components, and [Cloudinary](https://cloudinary.com) to serve static images that are optimized for the web.

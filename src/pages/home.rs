@@ -15,9 +15,17 @@ pub fn home() -> Html {
                 {"My name is Tyler Earls."}
                 <br />
                 {"I am a software engineer and musician."}
+                <br />
+                {"Please hire me!"}
             </HeadingOne>
+
             <Paragraph>
-                {"Currently, I am looking for a full-time software engineering position. I have years of industry experience with TypeScript, React, Vue, Java, and more."}
+                {"I'm currently between full-time positions. I have experience working on frontend applications with React and Vue, and I have backend experience in Node and Java. I have been learning Rust (which this website is written in) independently for 2 years as well."}
+            </Paragraph>
+            <Paragraph>
+                {"I have a passion for learning new things and I'm always looking to learn more. If you're hiring, or if you simply want to say hello, please feel free to email me at "}
+                <InlineAnchor href="mailto:tyler.a.earls@gmail.com" aria_label="Send Tyler Earls an email">{"tyler.a.earls@gmail.com"}</InlineAnchor>
+                {"."}
             </Paragraph>
             <Paragraph>
                 {"Since the start of the Covid-19 pandemic, I have been studying Rust, and now I use it regularly both on side projects (including this website!) and on Exercism's "}

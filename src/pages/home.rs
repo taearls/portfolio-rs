@@ -20,7 +20,7 @@ pub fn home() -> Html {
             </HeadingOne>
 
             <Paragraph>
-                {"I'm currently between full-time positions. I have experience working on frontend applications with React and Vue, and I have backend experience in Node and Java. I have been learning Rust (which this website is written in) independently for 2 years as well."}
+                {"I'm currently between full-time positions. I have experience working on frontend applications with React and Vue, and I have backend experience in Node and Java. I have been learning Rust (which this website is written in) independently for 2 years as well, which I would be thrilled to put into practice full-time."}
             </Paragraph>
             <Paragraph>
                 {"I have a passion for learning new things and I'm always looking to learn more. If you're hiring, or if you simply want to say hello, please feel free to email me at "}

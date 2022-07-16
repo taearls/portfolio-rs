@@ -75,9 +75,11 @@ pub fn web() -> Html {
                 {"Web Projects"}
             </HeadingOne>
             <Paragraph>
-                {"Here's a sample of some of my coding work.
-                    In addition to this website, which has been rebuilt with Rust and Yew, 
-                    my work includes the personal and freelance projects listed below. If you're interested to see more, feel free to stalk me on "}
+                {"The following are samples of some of the projects I've maintained independently. Please note that the majority of the work I've done has been under the employment of private companies whose source code is not open sourced. That being the case, only a small fraction of my engineering output is possible to showcase."}
+            </Paragraph>
+            <Paragraph>
+                {"In addition to this website, which has been rebuilt with Rust and Yew,
+                    my open sourced work includes the personal and freelance projects listed below. If you're interested to see more, feel free to stalk me on my "}
                 <InlineAnchor href="https://github.com/taearls" aria_label="Go to Tyler's Github">
                     {"Github"}
                 </InlineAnchor>
